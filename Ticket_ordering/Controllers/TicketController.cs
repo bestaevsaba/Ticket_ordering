@@ -29,7 +29,11 @@ namespace Ticket_ordering.Controllers
             ticketRepository.Add(ticket);
             return RedirectToAction("Sale");
         }
-
+        public IActionResult DeleteClient(int ticketId)
+        {
+            ticketRepository.Delete(ticketId); 
+            return RedirectToAction("Sale");
+        }
 
     }
 }

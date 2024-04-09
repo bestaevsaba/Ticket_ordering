@@ -2,9 +2,9 @@
 <div class="row">
     <div class="col-9">
         <div class="row">
-            <h3>Список продуктов</h3>
+            <h2>Список рейсов</h2>
         </div>
-        <a href="/ticket/addclient">Добавить новый продукт</a>
+        <h4><a href="/ticket/addclient">Купить билет</a></h4>
         <div class="row">
             <table class="table">
                 <thead>
@@ -26,7 +26,7 @@
                             <td>@Model[i].Seat</td>
                             <td>@Model[i].Cost</td>
                             <td><a href="/ticket/editproduct?productId=@Model[i].Id">Редактировать</a></td>
-                            <td><a href="/ticket/deleteproduct?productId=@Model[i].Id">Удалить</a></td>
+                            <td><a href="/ticket/deleteclient?ticketId=@Model[i].Id">Продать</a></td>
                         </tr>
                     }
                 </tbody>

@@ -9,8 +9,14 @@ namespace Ticket_ordering
     {
         private List<Ticket> tickets = new List<Ticket>()
         {
+            new Ticket("Bob","31A",12000),
+            new Ticket("Ben","1C",19000),
+            new Ticket("Den","23A",12000),
+            new Ticket("Alex","14D",19000),
+            new Ticket("Trevor","12D",12000),
+            new Ticket("Franklin","A67",19000),
             new Ticket("Bob","A14",12000),
-            new Ticket("Ben","A67",19000)
+            new Ticket("Ben","A67",19000),
         };
 
         public void Add(Ticket ticket)
@@ -30,6 +36,14 @@ namespace Ticket_ordering
             existingProduct.Name = ticket.Name;
             existingProduct.Seat = ticket.Seat;
             existingProduct.Cost = ticket.Cost;
+        }
+        public void Delete(int ticketId)
+        {
+            var ticketToRemove = tickets.FirstOrDefault(x => x.Id == ticketId);
+            if (ticketToRemove != null)
+            {
+                tickets.Remove(ticketToRemove);
+            }
         }
     }
 }
