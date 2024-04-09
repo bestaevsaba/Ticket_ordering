@@ -17,7 +17,7 @@ namespace Ticket_ordering
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<ITicketRepository, TicketRepository>();
+            services.AddSingleton<ITicketRepository, TicketRepository>();
             services.AddControllersWithViews();
         }
 

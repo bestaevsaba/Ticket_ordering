@@ -17,6 +17,7 @@
             Seat = seat;
             Cost = cost;
         }
+        public Ticket() { }
 
         public override string ToString()
         {

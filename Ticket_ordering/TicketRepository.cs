@@ -13,6 +13,11 @@ namespace Ticket_ordering
             new Ticket("Ben","A67",19000)
         };
 
+        public void Add(Ticket ticket)
+        {
+            tickets.Add(ticket);
+        }
+
         public List<Ticket> GetAll()
         {
             return tickets;

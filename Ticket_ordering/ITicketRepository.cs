@@ -6,5 +6,6 @@ namespace Ticket_ordering
     {
         List<Ticket> GetAll();
         void Update(Ticket ticket);
+        void Add(Ticket ticket);
     }
 }
