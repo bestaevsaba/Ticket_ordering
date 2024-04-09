@@ -9,13 +9,30 @@ namespace Ticket_ordering
     {
         private List<Ticket> tickets = new List<Ticket>()
         {
-            new Ticket("Bob","A14",12000),
-            new Ticket("Ben","A67",19000)
+            new Ticket("Иванов Петр Сергеевич","1A",12000),
+            new Ticket("Петров Алексей Иванович","2B",19000),
+            new Ticket("Сидоров Владимир Васильевич","3C",12000),
+            new Ticket("Кузнецов Денис Александрович","4D",19000),
+            new Ticket("Морозов Андрей Викторович","5E",12000),
+            new Ticket("Новиков Константин Дмитриевич","6F",19000),
+            new Ticket("Смирнов Михаил Александрович","7A",12000),
+            new Ticket("Козлов Сергей Дмитриевич","8B",19000),
+            new Ticket("Лебедев Александр Петрович","9C",12000),
+            new Ticket("Попов Дмитрий Игоревич","10D",19000)
         };
+
+        public void Add(Ticket ticket)
+        {
+            tickets.Add(ticket);
+        }
 
         public List<Ticket> GetAll()
         {
             return tickets;
+        }
+        public Ticket TryGetById(int id)
+        {
+            return tickets.FirstOrDefault(ticket => ticket.Id == id);
         }
         public void Update(Ticket ticket)
         {
@@ -25,6 +42,14 @@ namespace Ticket_ordering
             existingProduct.Name = ticket.Name;
             existingProduct.Seat = ticket.Seat;
             existingProduct.Cost = ticket.Cost;
+        }
+        public void Delete(int ticketId)
+        {
+            var ticketToRemove = tickets.FirstOrDefault(x => x.Id == ticketId);
+            if (ticketToRemove != null)
+            {
+                tickets.Remove(ticketToRemove);
+            }
         }
     }
 }

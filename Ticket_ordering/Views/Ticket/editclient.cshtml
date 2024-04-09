@@ -1,0 +1,40 @@
+﻿@model Ticket
+@if (Model != null)
+{
+    <form method="post">
+        <div>
+            <h3>Редактировать данные клиента</h3>
+        </div>
+
+        <input type="hidden" asp-for="Id" />
+
+        <div class="text-danger" font-weight-bold asp-validation-summary="All"></div>
+        <div class="row">
+            <div class="col-6">
+                <label asp-for="Name">Name</label><br />
+                <input class="text" asp-for="Name" />
+                <span asp-validation-for="Name"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <label asp-for="Seat">Seat</label><br />
+                <input class="text" asp-for="Seat" />
+                <span asp-validation-for="Seat"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <label asp-for="Cost">Cost</label><br />
+                <input class="number" min="1000" value="1000" asp-for="Cost" />
+                <span asp-validation-for="Cost"></span>
+            </div>
+        </div>
+
+        <div>
+            <button type="submit" asp-action="EditClient" asp-route-id="@Model.Id">Сохранить</button>
+        </div>
+    </form>
+}
