@@ -34,6 +34,23 @@ namespace Ticket_ordering.Controllers
             ticketRepository.Delete(ticketId); 
             return RedirectToAction("Sale");
         }
+        public IActionResult EditClient(int ticketId)
+        {
+            var ticket = ticketRepository.TryGetById(ticketId);
+            return View("EditClient", ticket);
+        }
 
+        [HttpPost]
+        public IActionResult EditClient(Ticket ticket)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(ticket);
+            }
+
+            ticketRepository.Update(ticket);
+            return RedirectToAction("Sale");
+        }
     }
 }
+

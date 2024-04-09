@@ -13,7 +13,7 @@
                         <th>Имя</th>
                         <th>Место</th>
                         <th>Цена</th>
-                        <th>Подтвердить</th>
+                        <th>Редактировать</th>
                         <th>Продажа</th>
                     </tr>
                 </thead>
@@ -25,7 +25,7 @@
                             <td>@Model[i].Name</td>
                             <td>@Model[i].Seat</td>
                             <td>@Model[i].Cost</td>
-                            <td><a href="/ticket/editproduct?productId=@Model[i].Id">Редактировать</a></td>
+                            <td><a href="/ticket/editclient?ticketId=@Model[i].Id">Редактировать</a></td>
                             <td><a href="/ticket/deleteclient?ticketId=@Model[i].Id">Продать</a></td>
                         </tr>
                     }

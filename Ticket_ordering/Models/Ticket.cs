@@ -4,7 +4,7 @@ namespace Ticket_ordering.Models
 {
     public class Ticket
     {
-        private static int IdCreate = -1;
+        private static int IdCreate = 0;
 
         [Required(ErrorMessage = "ФИО пассажира обязательно для заполнения")]
         [RegularExpression(@"^[А-ЯЁ][а-яё]+\s[А-ЯЁ][а-яё]+\s[А-ЯЁ][а-яё]+$", ErrorMessage = "ФИО пассажира должно содержать три слова, начинающихся с заглавной буквы")]
@@ -30,12 +30,13 @@ namespace Ticket_ordering.Models
             Seat = seat;
             Cost = cost;
         }
+
         public Ticket() { }
 
         public override string ToString()
         {
             return $"{Id}\n{Name}\n{Seat}\n{Cost}";
         }
-
     }
+
 }

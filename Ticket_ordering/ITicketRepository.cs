@@ -8,5 +8,6 @@ namespace Ticket_ordering
         void Update(Ticket ticket);
         void Add(Ticket ticket);
         void Delete(int ticketId);
+        Ticket TryGetById(int id);
     }
 }
